@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://data.fcc.gov/api/license-view/basicSearch/getLicenses?format=json&searchValue=0026529388
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Host:
+      - data.fcc.gov
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Sun-Java-System-Web-Server/7.0
+      Date:
+      - Tue, 19 Dec 2017 03:12:30 GMT
+      Content-Type:
+      - application/json
+      X-Powered-By:
+      - Servlet/2.5 JSP/2.1
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"status":"Info","Errors":{"Err":[{"code":"110","msg":"No matches found
+        for quick search"}]}}'
+    http_version: 
+  recorded_at: Tue, 19 Dec 2017 03:12:30 GMT
+recorded_with: VCR 4.0.0

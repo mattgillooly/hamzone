@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://data.fcc.gov/api/license-view/basicSearch/getLicenses?format=json&searchValue=0026525634
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Host:
+      - data.fcc.gov
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Sun-Java-System-Web-Server/7.0
+      Date:
+      - Tue, 19 Dec 2017 03:12:28 GMT
+      Content-Type:
+      - application/json
+      X-Powered-By:
+      - Servlet/2.5 JSP/2.1
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"status":"OK","Licenses":{"page":"1","rowPerPage":"100","totalRows":"2","lastUpdate":"Dec
+        18, 2017","License":[{"licName":"Wheeler, Thomas E","frn":"0026525634","callsign":"KD9IPI","categoryDesc":"Personal
+        Use","serviceDesc":"Amateur","statusDesc":"Cancelled","expiredDate":"05/12/2027","licenseID":"3919531","licDetailURL":"http://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?__newWindow=false&licKey=3919531"},{"licName":"Wheeler,
+        Thomas E","frn":"0026525634","callsign":"WA9FOA","categoryDesc":"Personal
+        Use","serviceDesc":"Vanity","statusDesc":"Active","expiredDate":"06/02/2027","licenseID":"3924978","licDetailURL":"http://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?__newWindow=false&licKey=3924978"}]}}'
+    http_version: 
+  recorded_at: Tue, 19 Dec 2017 03:12:28 GMT
+recorded_with: VCR 4.0.0
