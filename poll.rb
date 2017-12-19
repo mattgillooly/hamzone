@@ -1,8 +1,11 @@
 require_relative 'lib/licenses'
+require 'rest-client'
+
+WEBOOK_URL = ENV['SLACK_MYSELF_WEBHOOK_URL']
 
 frn = ARGV.last
 
-puts "Waiting for callsign for FRN: #{frn}"
+puts "Waiting for callsign(s) for FRN #{frn}"
 
 licenses = Licenses.new
 callsigns = licenses.get_callsigns(frn)
@@ -14,5 +17,8 @@ while callsigns.empty?
 end
 
 puts
-puts "Found callsign(s):"
-puts callsigns
+
+m = "Found callsign(s) for FRN #{frn}: #{callsigns.join(', ')}"
+puts m
+
+p RestClient.post WEBOOK_URL, { text: m }.to_json, content_type: 'application/json'
